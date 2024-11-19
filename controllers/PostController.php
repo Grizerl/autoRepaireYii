@@ -2,13 +2,16 @@
 
 namespace app\controllers;
 
+use app\models\Members;
+use app\models\Post;
 use yii\web\Controller;
 
 class PostController extends Controller
 {
     public function actionIndex()
     {
-        return $this->render('index');
+        $members=Members::find()->all();
+        return $this->render('index',compact('members'));
     }
 
     public function actionAbout()
@@ -28,7 +31,8 @@ class PostController extends Controller
 
     public function actionSale()
     {
-        return $this->render('pages/sale'); 
+        $posts =Post::find()->all();
+        return $this->render('pages/sale',compact('posts')); 
     }
 
     public function actionMonthly()

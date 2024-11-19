@@ -3,6 +3,7 @@
 use yii\helpers\Url;
 
  $this->title=Yii::$app->name;?>
+
 <div class="App">
 <div class="wrapper">
     <div class="banner-area">
@@ -36,16 +37,17 @@ use yii\helpers\Url;
              <div class="shop_header">
                  <div class="shop_container">
                      <div class="shop_content">
+                    <?php foreach($posts as $post): ?>
                  <div class="shop-car-card-container">
-                     <img src="../img/car1.jpg" alt="Car1">
+                        <?= \yii\helpers\Html::img("@web/{$post->img}") ?>
                      <div>
-                         <h2 class="car-brand">SANTRO</h2>
+                         <h2 class="car-brand"><?= $post->name ?></h2>
                          <!--  -->
                          <!--  -->
-                         <h3 class="car-model">Model - Santro BS6</h3>
+                         <h3 class="car-model"><?= $post->model ?></h3>
                          <!--  -->
                          <!--  -->
-                         <h1 class="car-price">9500$ <span class="old-price">9500$</span></h1>
+                         <h1 class="car-price"><?= $post->price ?>$ <span class="old-price"><?= $post->old_price ?>$</span></h1>
                          <!--  -->
                          <!--  -->
                          <p class="car-description">Отримайте бонус на суму до $20 000/-</p>
@@ -54,106 +56,7 @@ use yii\helpers\Url;
                          <a href="<?= Url::to(['post/form']) ?>" class="btn-st-car" type="submit">Натисніть тут</a>
                      </div>
                  </div>
-                 <!--  -->
-                 <!--  -->
-                 <div class="shop-car-card-container">
-                     <img src="../img/car2.jpg" alt="Car2">
-                     <div>
-                         <h2 class="car-brand">SANTRO</h2>
-                         <!--  -->
-                         <!--  -->
-                         <h3 class="car-model">Model - Santro BS6 AMT Auto</h3>
-                         <!--  -->
-                         <!--  -->
-                         <h1 class="car-price">3150$ <span class="old-price">2950$</span></h1>
-                         <!--  -->
-                         <!--  -->
-                         <p class="car-description">Отримайте бонус на суму до $20 000/-</p>
-                         <!--  -->
-                         <!--  -->
-                         <a href="<?= Url::to(['post/form']) ?>"  class="btn-st-car" type="submit">Натисніть тут</a>
-                     </div>
-                 </div>
-                 <!--  -->
-                 <!--  -->
-                 <div class="shop-car-card-container">
-                     <img src="../img/car3.jpg" alt="Car3">
-                     <div>
-                         <h2 class="car-brand">SANTRO</h2>
-                         <!--  -->
-                         <!--  -->
-                         <h3 class="car-model">Model - Grand i10 Nios</h3>
-                         <!--  -->
-                         <!--  -->
-                         <h1 class="car-price">650$ <span class="old-price">600$</span></h1>
-                         <!--  -->
-                         <!--  -->
-                         <p class="car-description">Отримайте бонус на суму до $20 000/-</p>
-                         <!--  -->
-                         <!--  -->
-                         <a href="<?= Url::to(['post/form']) ?>"  class="btn-st-car" type="submit">Натисніть тут</a>
-                     </div>
-                 </div>
-                 <!--  -->
-                 <!--  -->
-                 <div class="shop-car-card-container">
-                     <img src="../img/car4.jpg" alt="Car4">
-                     <div>
-                         <h2 class="car-brand">SANTRO</h2>
-                         <!--  -->
-                         <!--  -->
-                         <h3 class="car-model">Model - Aura BS6</h3>
-                         <!--  -->
-                         <!--  -->
-                         <h1 class="car-price">1100$ <span class="old-price">950$</span></h1>
-                         <!--  -->
-                         <!--  -->
-                         <p class="car-description">Отримайте бонус на суму до $20 000/-</p>
-                         <!--  -->
-                         <!--  -->
-                         <a href="<?= Url::to(['post/form']) ?>"  class="btn-st-car" type="submit">Натисніть тут</a>
-                     </div>
-                 </div>
-                 <!--  -->
-                 <!--  -->
-                 <div class="shop-car-card-container">
-                     <img src="../img/car5.jpg" alt="Car5">
-                     <div>
-                         <h2 class="car-brand">SANTRO</h2>
-                         <!--  -->
-                         <!--  -->
-                         <h3 class="car-model">Model - Santro BS6</h3>
-                         <!--  -->
-                         <!--  -->
-                         <h1 class="car-price">1830$<span class="old-price">1700$</span></h1>
-                         <!--  -->
-                         <!--  -->
-                         <p class="car-description">Отримайте бонус на суму до $20 000/-</p>
-                         <!--  -->
-                         <!--  -->
-                         <a href="<?= Url::to(['post/form']) ?>"  class="btn-st-car" type="submit">Натисніть тут</a>
-                     </div>
-                 </div>
-                 <!--  -->
-                 <!--  -->
-                 <div class="shop-car-card-container">
-                     <img src="../img/car6.jpg" alt="Car6">
-                     <div>
-                         <h2  class="car-brand">SANTRO</h2>
-                         <!--  -->
-                         <!--  -->
-                         <h3 class="car-model">Model - Santro BS6</h3>
-                         <!--  -->
-                         <!--  -->
-                         <h1 class="car-price">2000$ <span class="old-price">1550$</span></h1>
-                         <!--  -->
-                         <!--  -->
-                         <p class="car-description">Отримайте бонус на суму до $20 000/-</p>
-                         <!--  -->
-                         <!--  -->
-                         <a  href="<?= Url::to(['post/form']) ?>" class="btn-st-car" type="submit">Натисніть тут</a>
-                     </div>
-                 </div>
+                 <?php endforeach; ?>
                      </div>
                  </div>
              </div>

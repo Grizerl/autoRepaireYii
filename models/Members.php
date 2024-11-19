@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
-class Repairs extends ActiveRecord
+class Members extends ActiveRecord
 {
 
     public static function tableName()
     {
-        return 'repairs';
+        return 'members';
     }
 
 }

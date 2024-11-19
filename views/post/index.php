@@ -89,54 +89,9 @@ use yii\helpers\Url;
            </div>
         </aside>
      </section>
-     <section id="support">
-        <!-- Support section -->
-        <div class="section-support-container">
-           <div class="section-support-content">
-              <div class="section-support-content-title">
-                 <h2 class="section-support-title">НАША ПІДТРИМКА</h2>
-                 <h3 class="section-support-subtitle">Наші послуги</h3>
-              </div>
-              <div class="card-support-list">
-                 <div class="card-support">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <h2>Ремонт & Заміна</h2>
-                    <p class="card-p cd-p">Ми надаємо комплексні послуги з <br> ремонту та заміни деталей вашого<br> автомобіля</p>
-                 </div>
-                 <div class="card-support">
-                    <i class="fa-regular fa-compass"></i>
-                    <h2>Лазерне різання</h2>
-                    <p class="card-p cd-p">Пропонуємо високоточне лазерне<br> різання металу для виготовлення<br> деталей</p>
-                 </div>
-                 <div class="card-support">
-                    <i class="fa-solid fa-car-rear"></i>
-                    <h2>Заміна олії </h2>
-                    <p class="card-p cd-p">Наша послуга з заміни олії забезпечує вашому автомобілю продуктивність та довговічність</p>
-                 </div>
-              </div>
-              <div class="card-support-list cd-lt-sup">
-                 <div class="card-support">
-                    <i class="fa-solid fa-hammer"></i>
-                    <h2>Гарантія на обслуговування</h2>
-                    <p class="card-p cd-p">Ми надаємо гарантію що свідчить про впевненість у робіті</p>
-                 </div>
-                 <div class="card-support">
-                    <i class="fa-solid fa-gears"></i>
-                    <h2>Безкоштовна діагностика</h2>
-                    <p class="card-p cd-p">Скористайтеся безкоштовною діагностикою вашого авто.</p>
-                 </div>
-                 <div class="card-support">
-                    <i class="fa-solid fa-life-ring"></i>
-                    <h2>Довічна гарантія <br> на роботу</h2>
-                    <p class="card-p cd-p">Наша довічна гарантія свідчить про впевненість у якості виконаних робіт</p>
-                 </div>
-              </div>
-           </div>
-        </div>
-     </section>
      <section>
         <!-- Advantages section -->
-        <div>
+        <div style="margin-top: 10vh;">
            <div class="section-advantages-conteiner">
               <div>
                  <h1 class="section-advantages-title">НАШІ ПЕРЕВАГИ</h1>
@@ -346,31 +301,13 @@ use yii\helpers\Url;
            <h3 class="section-member-title">Наша команда</h3>
            <div class="swiper mySwiper">
               <div class="swiper-wrapper">
+               <?php foreach($members as $member): ?>
                  <div class="swiper-slide sr-r">
-                    <img class="member-img" src="../img/members/team-img1.jpg" alt="Team member 1">
-                    <h3>John Delos</h3>
-                    <span class="section-member-role">Менеджер</span>
+                  <?= \yii\helpers\Html::img("@web/{$member->img}", ['class' => 'member-img']) ?>
+                    <h3><?= $member->name ?></h3>
+                    <span class="section-member-role"><?= $member->role ?></span>
                  </div>
-                 <div class="swiper-slide sr-r">
-                    <img class="member-img" src="../img/members/team-img2.jpg" alt="Team member 2">
-                    <h3>Ajura Agoh</h3>
-                    <span class="section-member-role">Інженер</span>
-                 </div>
-                 <div class="swiper-slide sr-r">
-                    <img class="member-img" src="../img/members/team-img3.jpg" alt="Team member 3">
-                    <h3>Sabina Nur</h3>
-                    <span class="section-member-role">Директор</span>
-                 </div>
-                 <div class="swiper-slide sr-r">
-                    <img class="member-img" src="../img/members/team-img4.jpg" alt="Team member 4">
-                    <h3>Alan Nural</h3>
-                    <span class="section-member-role">Менеджер</span>
-                 </div>
-                 <div class="swiper-slide sr-r">
-                    <img class="member-img" src="../img/members/team-img5.jpg" alt="Team member 5">
-                    <h3>Liton Sokar</h3>
-                    <span class="section-member-role">Інженер</span>
-                 </div>
+               <?php endforeach; ?>
               </div>
            </div>
         </div>
